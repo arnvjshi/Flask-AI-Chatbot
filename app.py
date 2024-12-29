@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template, send_from_directory
 from langchain import HuggingFaceHub, LLMChain, PromptTemplate
 import re
+
 from langdetect import detect
 import os
 
