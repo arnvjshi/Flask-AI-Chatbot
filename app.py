@@ -1,9 +1,10 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, send_from_directory
 from langchain import HuggingFaceHub, LLMChain, PromptTemplate
 import re
 from langdetect import detect
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 # HuggingFace API Key
 api_key = "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"
@@ -46,7 +47,11 @@ def extract_english(text):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')  # Flask will now look for `index.html` in the current directory.
+
+@app.route('/script.js')
+def serve_js():
+    return send_from_directory(os.path.dirname(__file__), 'script.js')
 
 @app.route('/api/generate', methods=['POST'])
 def generate_response():
