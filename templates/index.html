@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ChatBOT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #response {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI ChatBOT</h1>
+    <div>
+        <label for="promptInput">Enter your Prompt:</label>
+        <input type="text" id="promptInput" placeholder="Type your prompt here" style="width: 100%; padding: 10px;">
+        <button id="generateButton" style="margin-top: 10px; padding: 10px;">Enter</button>
+    </div>
+    <div id="response"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
