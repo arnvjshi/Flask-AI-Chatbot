@@ -8,7 +8,7 @@ import os
 app = Flask(__name__, template_folder='.')
 
 # HuggingFace API Key
-api_key = "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"
+api_key = "<--API key-->"
 model = "HuggingFaceH4/starchat-beta"
 
 # Create LLMChain
